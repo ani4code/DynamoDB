@@ -1,0 +1,24 @@
+$params = [
+    'TableName' => 'Users',
+    'KeySchema' => [
+        [
+            'AttributeName' => 'UserID',
+            'KeyType' => 'HASH'  //Partition key
+        ]
+    ],
+    'AttributeDefinitions' => [
+        [
+            'AttributeName' => 'Email',
+            'AttributeType' => 'S'
+        ],
+        [
+            'AttributeName' => 'Name',
+            'AttributeType' => 'S'
+        ],
+
+    ],
+    'ProvisionedThroughput' => [
+        'ReadCapacityUnits' => 10,
+        'WriteCapacityUnits' => 10
+    ]
+];
